@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <title>User</title>
 </head>
-<body class="content">
-    <div class="text">
-        Контент пользователя
+<body class="body">
+    <div class="header">
+        <button class="header__button button-logout" onclick="App.logout()" title="Выйти">🚪</button>
     </div>
-    <button class="logout-button" onclick="location.href = ((paths = location.href.split('/')) && (paths.length-=2) && (paths.join('/') + '/index.html'));">Выйти</button>
+    <main class="main">
+        <div class="content"></div>
+    </main>
     <script src="main.js"></script>
 </body>
 </html>

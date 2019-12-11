@@ -9,42 +9,11 @@
 </head>
 <body class="body">
     <div class="header">
-        <button class="header__button button-add-content" onclick="App.addContent()">➕</button>
-        <button class="header__button button-logout" onclick="location.href = ((paths = location.href.split('/')) && (paths.length-=2) && (paths.join('/') + '/index.html'));">🚪</button>
+        <button class="header__button button-add-content" onclick="App.addContent()" title="Добавить запись">➕</button>
+        <button class="header__button button-logout" onclick="App.logout()" title="Выйти">🚪</button>
     </div>
     <main class="main">
-        <div class="content">
-            <!-- <div id="1" class="content-item">
-                <div class="content-text">
-                    <input class="content-text__item content-title" value="First Note" onkeyup="App.contentChange(event)" onclick="App.captureText(event)" />
-                    <textarea class="content-text__item content-note" onkeyup="App.contentChange(event)" onclick="App.captureText(event)">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a</textarea>
-                </div>
-                <div class="content-manage">
-                    <button class="content__button button-save" onclick="App.saveContent(event.target)">💾</button>
-                    <button class="content__button button-delete" onclick="App.deleteContent(event.target)">🗑️</button>
-                </div>
-            </div> -->
-            <!-- <div id="2" class="content-item">
-                <div class="content-text" contenteditable="true">
-                    <span class="content-text__item content-title">First Note</span>
-                    <span class="content-text__item content-note">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a  print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a</span>
-                </div>
-                <div class="content-manage">
-                    <button class="content__button button-save" onclick="App.saveContent(event.target)">💾</button>
-                    <button class="content__button button-delete" onclick="App.removeContent(event.target)">🗑️</button>
-                </div>
-            </div>
-            <div id="3" class="content-item">
-                <div class="content-text" contenteditable="true">
-                    <span class="content-text__item content-title">First Note</span>
-                    <span class="content-text__item content-note">Lorem ipsum, or li in a</span>
-                </div>
-                <div class="content-manage">
-                    <button class="content__button button-save" onclick="App.saveContent(event.target)">💾</button>
-                    <button class="content__button button-delete" onclick="App.removeContent(event.target)">🗑️</button>
-                </div>
-            </div> -->
-        </div>
+        <div class="content"></div>
     </main>
     <script src="main.js"></script>
 </body>

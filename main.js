@@ -1,1 +1,49 @@
-"use strict";const App=(()=>{const e=e=>{for(let l in e)localStorage.setItem(l,e[l]);let l,a=location.href.split("/");a[a.length-1].indexOf(".")>-1&&(a.length--,l=a.join("/")),console.log("href is ",l),l?location.href=l+"/"+e.accessLevel+"/index.html":location.href+=e.accessLevel+"/index.html"};return{formSubmit:()=>{let l,a;document.querySelectorAll(".form-input").forEach(t=>{switch(t.id){case"login":"admin@email.com"===t.value?l=a="admin":"user@email.com"===t.value?l=a="user":alert("Неверное имя пользователя!");break;case"password":l&&t.value.length>7&&("adminadmin"===t.value||"useruser"===t.value)?e({accessLevel:l,login:a,password:t.value}):alert("Неверный пароль!")}})}}})();
+'use strict';
+const App = (() => {
+    const formSubmit = () => {
+        let accessLevel;
+        document.querySelectorAll('.form-input').forEach(i => {
+            switch(i.id) {
+                case 'login':
+                    if (i.value === 'admin@email.com') {
+                        accessLevel = 'admin';
+                    }
+                    else if (i.value === 'user@email.com') {
+                        accessLevel = 'user';
+                    }
+                    else {
+                        alert('Неверное имя пользователя!');
+                    }
+                break;
+                case 'password':
+                    if (accessLevel && i.value.length > 7 && (i.value === 'adminadmin' || i.value === 'useruser')) { 
+                        auth(accessLevel);
+                    }
+                    else {
+                        alert('Неверный пароль!');
+                    }
+                break;
+            }
+        });
+    };
+    
+    const auth = (accessLevel) => {
+        localStorage.setItem('accessLevel', accessLevel);
+        let href;
+        let locationPaths = location.href.split('/');
+        if (locationPaths[locationPaths.length - 1].indexOf('.') > -1) {
+            locationPaths.length--;
+            href = locationPaths.join('/');
+        }
+        if (href) {
+            location.href = href + '/' + accessLevel + '/index.html';
+        }
+        else {
+            location.href += accessLevel + '/index.html';
+        }
+    }
+    
+    return {
+        formSubmit: formSubmit
+    };
+})();

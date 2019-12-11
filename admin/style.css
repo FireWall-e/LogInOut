@@ -43,24 +43,17 @@ textarea {
 }
 
 .header__button {
-    /* position: absolute;
-    top: 10px;
-    right: 10px; */
     width: 40px;
-    /* margin: auto; */
     margin: 10px 10px 0 10px;
 }
 
 .button-add-content {
     background: dodgerblue;
-    /* width: 40px; */
 }
 
 .button-logout {
     background: tomato;
     height: 40px;
-    /* width: 100px; */
-    /* width: 100px; */
 }
 
 .main {
@@ -78,7 +71,7 @@ textarea {
 
 .content-item {
     height: 150px;
-    background-color: pink;
+    background-color: lightpink;
     display: flex;
     margin-bottom: 10px;
 }
@@ -88,11 +81,9 @@ textarea {
 }
 
 .content-text {
-    /* width: 90%; */
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
 }
 
 .content-text__item {
@@ -124,18 +115,17 @@ textarea {
     align-items: center;
     justify-content: space-around;
     display: flex;
+    padding: 0 15px;
     border-left: 1px solid rgba(255,255,255,0.3);
 }
 
-/* .content-manage.show {
-    display: flex;
-} */
-
-.button-save {
+.button-save,
+.button-discard {
     display: none;
 }
 
-.button-save.show {
+.content-item.edited .button-save,
+.content-item.edited .button-discard {
     display: block;
 }
 
@@ -143,5 +133,9 @@ textarea {
     width: 40px;
     height: 40px;
     background-color: hotpink;
-    margin: 0 15px;
+    margin-right: 5px;
+}
+
+.content__button:last-child {
+    margin-right: 0;
 }
